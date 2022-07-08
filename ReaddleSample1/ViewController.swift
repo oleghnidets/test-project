@@ -22,15 +22,27 @@ class ViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    private var numberOfItems = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionView.dataSource = self
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(insertNewItem))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func insertNewItem() {
+        numberOfItems += 1
+        
+        collectionView.reloadData()
+        
+        collectionView.scrollToItem(at: IndexPath(item: numberOfItems - 1, section: 0), at: .right, animated: true)
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 150, height: 150)
     }
@@ -38,7 +50,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
