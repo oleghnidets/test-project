@@ -41,13 +41,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roP-Oo-MeZ">
+                                <rect key="frame" x="166" y="619" width="82" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add item"/>
+                                <connections>
+                                    <action selector="addItem" destination="BYZ-38-t0r" eventType="touchUpInside" id="gsA-Em-Xtm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V3v-U3-ssi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6Np-Lx-F46"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V3v-U3-ssi" secondAttribute="trailing" id="B26-ll-L2o"/>
+                            <constraint firstItem="roP-Oo-MeZ" firstAttribute="top" secondItem="V3v-U3-ssi" secondAttribute="bottom" constant="91" id="Gn6-uL-O3W"/>
                             <constraint firstItem="V3v-U3-ssi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qQr-8S-BB6"/>
+                            <constraint firstItem="roP-Oo-MeZ" firstAttribute="centerX" secondItem="V3v-U3-ssi" secondAttribute="centerX" id="uuw-Z0-skM"/>
                         </constraints>
                     </view>
                     <connections>
